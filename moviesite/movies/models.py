@@ -6,6 +6,9 @@ class Actors(models.Model):
   character=models.CharField(max_length=10)
   image_url=models.TextField()
 
+  def __str__(self):
+    return self.name
+
 class Movies(models.Model):
   title_kor=models.CharField(max_length=200)
   title_eng=models.CharField(max_length=200)
@@ -22,9 +25,18 @@ class Movies(models.Model):
 User=get_user_model()
 
 class Comments(models.Model):
-  username=models.ForeignKey(User, on_delete=models.CASCADE)
+  user=models.ForeignKey(User, on_delete=models.CASCADE)
+  movie=models.ForeignKey(
+    Movies,
+    on_delete=models.CASCADE,
+    related_name='comments',
+    null=True, blank=True
+  )
   content=models.TextField()
   create_date=models.DateTimeField(auto_now_add=True)
+
+  def __str__(self):
+    return f"{self.user.username} @ {self.movie.title_kor}"
 
 
 
