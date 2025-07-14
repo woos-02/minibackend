@@ -15,7 +15,7 @@ class CommentsSerializer(serializers.ModelSerializer):
 
 class MoviesSerializer(serializers.ModelSerializer):
   actors = ActorsSerializer(many=True)
-  Comments = CommentsSerializer(many=True, read_only=True)
+  comments = CommentsSerializer(many=True, read_only=True)
   
   class Meta:
     model=Movies

@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnl
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Movies, Comments
-from .serializers import MoviesSerializer, CommentSerializer
+from .serializers import MoviesSerializer, CommentsSerializer
 
 @api_view(['GET'])
 def movie_list(request):
@@ -38,7 +38,7 @@ def movie_detail(request, movie_id):
     movie_ser = MoviesSerializer(movie)
 
     comments = movie.comments.order_by('-create_date')  # related_name='comments'
-    comm_ser = CommentSerializer(comments, many=True)
+    comm_ser = CommentsSerializer(comments, many=True)
 
     return Response({
         'movie' : movie_ser.data,
@@ -52,7 +52,7 @@ def add_comment(request, movie_id):
     #  로그인한 사용자만 댓글 작성.
     #  로그아웃 상태면 401 리턴 → 프론트에서 로그인 페이지로 리다이렉트
     movie = get_object_or_404(Movies, pk=movie_id)
-    serializer = CommentSerializer(data=request.data)
+    serializer = CommentsSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save(user=request.user, movie=movie)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
