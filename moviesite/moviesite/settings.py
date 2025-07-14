@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'movies',
+    'rest_framework'
 
     #rest framework 관련
     'rest_framework',
