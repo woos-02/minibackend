@@ -1,0 +1,21 @@
+[33m2cb802b[m[33m ([m[1;36mHEAD[m[33m)[m HEAD@{0}: commit: 11111111
+[33m7bf3f0b[m HEAD@{1}: rebase (pick): 2nd commit
+[33m0d88e01[m HEAD@{2}: rebase (pick): movies models
+[33m8b5fda4[m HEAD@{3}: rebase (pick): movies models
+[33m90582d7[m[33m ([m[1;31morigin/wooseong[m[33m)[m HEAD@{4}: rebase (start): checkout origin/wooseong
+[33m49cad9d[m[33m ([m[1;32mwooseong[m[33m)[m HEAD@{5}: commit (merge): login+logout+registration
+[33m4935da5[m HEAD@{6}: commit (merge): Merge branch 'main' of https://github.com/woos-02/minibackend into wooseong
+[33m466d486[m HEAD@{7}: commit (merge): 4444
+[33m6d7b692[m HEAD@{8}: commit: 2nd commit
+[33m02b29f6[m HEAD@{9}: pull origin main: Fast-forward
+[33m0bcea84[m[33m ([m[1;32mmain[m[33m)[m HEAD@{10}: checkout: moving from main to wooseong
+[33m0bcea84[m[33m ([m[1;32mmain[m[33m)[m HEAD@{11}: checkout: moving from wooseong to main
+[33m02b29f6[m HEAD@{12}: pull origin main: Fast-forward
+[33m0bcea84[m[33m ([m[1;32mmain[m[33m)[m HEAD@{13}: checkout: moving from main to wooseong
+[33m0bcea84[m[33m ([m[1;32mmain[m[33m)[m HEAD@{14}: checkout: moving from wooseong to main
+[33m90582d7[m[33m ([m[1;31morigin/wooseong[m[33m)[m HEAD@{15}: reset: moving to HEAD^
+[33mcd32034[m HEAD@{16}: commit (merge): 점검용
+[33m90582d7[m[33m ([m[1;31morigin/wooseong[m[33m)[m HEAD@{17}: commit: branch push
+[33m319bd96[m HEAD@{18}: pull origin main: Fast-forward
+[33m0bcea84[m[33m ([m[1;32mmain[m[33m)[m HEAD@{19}: checkout: moving from main to wooseong
+[33m0bcea84[m[33m ([m[1;32mmain[m[33m)[m HEAD@{20}: commit (initial): first commit
