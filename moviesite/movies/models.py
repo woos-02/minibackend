@@ -16,9 +16,10 @@ class Movies(models.Model):
   plot=models.TextField()
   rating=models.CharField(max_length=10)
   director_name=models.CharField(max_length=10)
-  actors=models.ForeignKey(Actors, on_delete=models.CASCADE)
+  director_image_url=models.TextField(null=True, blank=True)
+  actors=models.ManyToManyField(Actors)
 
-User=get_user_model
+User=get_user_model()
 
 class Comments(models.Model):
   username=models.ForeignKey(User, on_delete=models.CASCADE)
