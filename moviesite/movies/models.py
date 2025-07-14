@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 class Actors(models.Model):
+  movies=models.ForeignKey('Movies', on_delete=models.CASCADE, related_name='actors', null=True, blank=True)
   name=models.CharField(max_length=10)
   character=models.CharField(max_length=10)
   image_url=models.TextField()
@@ -20,7 +21,7 @@ class Movies(models.Model):
   rating=models.CharField(max_length=10)
   director_name=models.CharField(max_length=10)
   director_image_url=models.TextField(null=True, blank=True)
-  actors=models.ManyToManyField(Actors)
+
 
 User=get_user_model()
 
