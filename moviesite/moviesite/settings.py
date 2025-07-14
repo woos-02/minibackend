@@ -55,7 +55,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    # CORS 오류 
+    'corsheaders,middleware.CorsMiddleware', 
+    'django.middleware.securit'
+    'y.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -201,3 +204,11 @@ SIMPLE_JWT = {
     'TOKEN_TYPE_CLAIM': 'token_type',
     'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
 }
+
+CORS_ORIGIN_WHITELIST = [ 
+    # CORS 오류 -> lcoalhost 3000 추가 및 본인 IP + movies
+    "http://localhost:3000",
+    "http://127.0.0.1:8000/movies"
+    ]
+
+CORS_ALLOW_CREDENTIALS = True
