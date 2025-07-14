@@ -29,3 +29,4 @@ class MovieDetail(APIView):
         movie=self.get_object(pk=pk)
         serializer=MoviesSerializer(movie)
         return Response(serializer.data)
+    

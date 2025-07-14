@@ -10,6 +10,7 @@ class CustomRegisterSerializer(RegisterSerializer):
        super(CustomRegisterSerializer, self).get_cleaned_data()
        return {
             'username': self.validated_data.get('username', ''),
+            'email' : self.validated_data.get('email', ''),
             'password1': self.validated_data.get('password1', ''),
             'password2': self.validated_data.get('password2', ''),
             'nickname': self.validated_data.get('nickname', ''),
@@ -28,4 +29,4 @@ class CustomRegisterSerializer(RegisterSerializer):
 class CustomUserDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ['id', 'username', 'password', 'nickname']
+        fields = ['id', 'username', 'password', 'nickname', 'email']
