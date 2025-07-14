@@ -26,8 +26,19 @@ class Command(BaseCommand):
         director_image_url=movie['director_image_url'],
         )
       
-      for actor_name in movie['actors']:
-        actor, _ = Actors.objects.get_or_create(name=actor_name)
+      for actor_data in movie['actors']:
+        actor, _ = Actors.objects.get_or_create(
+          name=actor_data['name'],
+          defaults={
+            'character': actor_data['character'],
+            'image_url': actor_data['image_url']
+          }
+        )
+        if not _:
+          actor.character = actor_data['character']
+          actor.image_url = actor_data['image_url']
+          actor.save()
+
         m.actors.add(actor)
         count_actor+=1
         
