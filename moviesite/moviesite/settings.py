@@ -93,13 +93,27 @@ WSGI_APPLICATION = 'moviesite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+import pymysql
+
+pymysql.install_as_MySQLdb()
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default' : {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': 3306,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -217,3 +231,11 @@ CORS_ALLOW_CREDENTIALS = True
 from decouple import config
 
 SECRET_KEY = config('SECRET_KEY')
+
+ALLOWED_HOSTS = ['127.0.0.1', '43.202.7.138', '[도메인주소]']
+# ex) ALLOWED_HOSTS = ['127.0.0.1', '3.12.211.15', 'meotsa.com']
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
