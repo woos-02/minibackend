@@ -6,8 +6,12 @@ from .models import CustomUser
 class CustomRegisterSerializer(RegisterSerializer):
    nickname = serializers.CharField(max_length=100)
    
+   _has_phone_field = False
+
+
    def get_cleaned_data(self):
-       super(CustomRegisterSerializer, self).get_cleaned_data()
+       #super(CustomRegisterSerializer, self).get_cleaned_data()
+       cleaned_data=super().get_cleaned_data()
        return {
             'username': self.validated_data.get('username', ''),
             'password1': self.validated_data.get('password1', ''),

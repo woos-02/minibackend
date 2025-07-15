@@ -7,11 +7,12 @@ class ActorsSerializer(serializers.ModelSerializer):
     fields = ['name', 'character', 'image_url']
 
 class CommentsSerializer(serializers.ModelSerializer):
-  username=serializers.StringRelatedField(source='user.username', read_only=True)
+  username=serializers.PrimaryKeyRelatedField(source='user.username', read_only=True)
   
   class Meta:
     model=Comments
-    fields=['id','username', 'content', 'create_date']
+    fields=['id','movie','user','username', 'content', 'create_date']
+    read_only_fields = ['user','username', 'create_date']
 
 class MoviesSerializer(serializers.ModelSerializer):
   actors = ActorsSerializer(many=True, read_only = True)
