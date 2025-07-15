@@ -15,6 +15,7 @@ services:
             - server
         env_file:
             - .env
+        command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
 
     nginx:
         image: nginx:latest
@@ -27,7 +28,7 @@ services:
             - ./cert/certbot/www:/var/www/certbot # 이 부분
         restart: always
         ports:
-            - '80:80'
+            - "80:80"
             - '443:443'
         depends_on:
             - web
@@ -41,5 +42,6 @@ services:
         volumes:
             - ./cert/certbot/conf:/etc/letsencrypt
             - ./cert/certbot/www:/var/www/certbot
+        entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 networks:
     server:
