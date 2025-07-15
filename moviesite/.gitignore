@@ -7,7 +7,7 @@ venv/
 ../myvenv/
 
 # Django SQLite DB
-db.sqlite3s
+db.sqlite3
 
 # Environment variables
 .env
