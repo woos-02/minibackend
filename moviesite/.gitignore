@@ -4,10 +4,10 @@ __pycache__/
 
 # Virtual environments
 venv/
-myvenv/
+myvenv////
 
 # Django SQLite DB
-db.sqlite3
+db.sqlite3s
 
 # Environment variables
 .env
