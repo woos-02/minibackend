@@ -212,3 +212,8 @@ CORS_ORIGIN_WHITELIST = [
     ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+# settings.py
+from decouple import config
+
+SECRET_KEY = config('SECRET_KEY')
