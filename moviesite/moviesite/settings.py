@@ -52,11 +52,13 @@ INSTALLED_APPS = [
 
     # pip install requests 후
     'allauth.socialaccount',
+
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     # CORS 오류 
-    'corsheaders,middleware.CorsMiddleware', 
+    'corsheaders.middleware.CorsMiddleware', 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -207,7 +209,7 @@ SIMPLE_JWT = {
 CORS_ORIGIN_WHITELIST = [ 
     # CORS 오류 -> lcoalhost 3000 추가 및 본인 IP + movies
     "http://localhost:3000",
-    "http://127.0.0.1:8000/movies"
+    "http://127.0.0.1:8000"
     ]
 
 CORS_ALLOW_CREDENTIALS = True
