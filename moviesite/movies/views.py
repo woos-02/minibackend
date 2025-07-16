@@ -28,6 +28,7 @@ class MovieDetail(APIView):
     
     def get_object(self, pk):
         movie=get_object_or_404(Movies, pk=pk)
+        self.check_object_permissions(self.request, movie) # 커스텀 permission 부여
         return movie
     
     def get(self, request, pk):
@@ -41,6 +42,7 @@ class CommentList(APIView):
 
     def get_object(self, movie_id):
         movie=get_object_or_404(Movies, id=movie_id)
+        self.check_object_permissions(self.request, movie) # 커스텀 permission 부여
         return movie
     
     def get(self,request, movie_id):
