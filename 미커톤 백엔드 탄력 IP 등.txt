@@ -1,0 +1,25 @@
+
+영화 279
+배우 2231
+
+282 / 2248
+
+액세스 토큰
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyNDc1MDg3LCJpYXQiOjE3NTI0NzE0ODcsImp0aSI6IjRiY2JmZWEzODE4ZTQ5ZmJiMzVhNmVkZmFlZWUzOTc3IiwidXNlcl9pZCI6Mn0.g7eUldMN6jgKOIP2YmB1Ok3Lx2iO92QEynnWvGjPT0E
+
+백에서 코러스 설정 ? -> 프론트 3000포트를 열어야한다
+
+https://github.com/woos-02/minibackend.gitd
+
+
+탄력적 IP 43.202.7.138
+
+마스터 사용자 이름 root
+비밀번호 이우성4954
+
+보안그룹 ID
+sg-0c8424a1234406b71
+
+SECRET_KEY = 'django-insecure-uz&i#e@(#bli0^oeem%uyx#_kuk!bs1*p)lm!qigrh5kxy6%xz'
+
+hufs-likelion.store

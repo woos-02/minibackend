@@ -242,3 +242,12 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://hufs-likelion.store",
+    # 신뢰할 도메인 명시 (Django 4.0 이상부터 필수)
+]
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+USE_X_FORWARDED_HOST = True
+# 원본 요청 HTTPS 인식
